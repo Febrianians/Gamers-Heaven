@@ -7,59 +7,58 @@ export default function NavbarComponent() {
   return(
     <div>
       <Navbar
-      //color="dark"
-      //dark
+      color="dark"
+      dark
       expand="md"
       fixed="off"
       className={styles.navbar}
       >
+        <NavbarBrand className={styles.navbrand} href="/">
+          LOGO
+        </NavbarBrand>
+        <NavbarToggler onClick={function noRefCheck(){}} />
+        <Collapse navbar>
+          <Nav
+            className="me-auto"
+            navbar
+          >
+            <NavItem className={styles.navitem}>
+              <NavLink href="/">
+                HOME
+              </NavLink>
+            </NavItem>
+            <NavItem className={styles.navitem}>
+              <NavLink href="https://github.com/reactstrap/reactstrap">
+                WORK
+              </NavLink>
+            </NavItem>
+            <NavItem className={styles.navitem}>
+              <NavLink href="https://github.com/reactstrap/reactstrap">
+                CONTACT
+              </NavLink>
+            </NavItem>
+            <NavItem className={styles.navitem}>
+              <NavLink href="https://github.com/reactstrap/reactstrap">
+                ABOUT ME
+              </NavLink>
+            </NavItem>
 
+          </Nav>
+          <Nav>
+            <NavItem className={styles.navitem}>
+              <NavLink className={styles.navlink} href='/register'>
+                REGISTER
+              </NavLink>
+            </NavItem>
+            <NavItem className={styles.navitem}>
+              <NavLink className={styles.navlink} href="/login">
+                LOGIN
+              </NavLink>
+            </NavItem>
 
-      <NavbarBrand className={styles.navbrand} href="/">
-        LOGO
-      </NavbarBrand>
-
-
-      <NavbarToggler onClick={function noRefCheck(){}} />
-      <Collapse navbar>
-        <Nav
-          className="me-auto"
-          navbar
-        >
-        <NavItem className={styles.navitem}>
-          <NavLink className={styles.navlink} href="/">
-              HOME
-            </NavLink>
-          </NavItem>
-          <NavItem className={styles.navitem}>
-            <NavLink className={styles.navlink} href="profile">
-              PROFILE
-            </NavLink>
-          </NavItem>
-          <NavItem className={styles.navitem}>
-            <NavLink className={styles.navlink} href="/game-list">
-              GAME LIST
-            </NavLink>
-          </NavItem>
-        </Nav>
-        
-        
-        <Nav>
-          <NavItem className={styles.navitem}>
-            <NavLink className={styles.navlink} href='/'>
-              UserHasLogin@gmail.com
-            </NavLink>
-          </NavItem>
-          <NavItem className={styles.navitem}>
-            <NavLink className={styles.navlink} href="/logout">
-              LOG OUT
-            </NavLink>
-          </NavItem>
-
-        </Nav>
-      </Collapse>
-    </Navbar>
-    
+          </Nav>
+        </Collapse>
+      </Navbar>
     </div>
-  )
+)
 }
