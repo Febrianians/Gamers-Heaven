@@ -1,12 +1,32 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+// import { Link, useNavigate } from "react-router-dom";
 import Header from '../../Component/Header/Header';
+import { auth, db } from '../../services/firebase'
+import { signInWithEmailAndPassword } from 'firebase/auth';
+
 export default function LoginPage() {
-  return(
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+        try {
+            console.log(email,password)     
+            const response = await signInWithEmailAndPassword(auth, email, password);
+                console.log(response);
+                    if(response) alert('Login Success')
+                
+                } catch (err) {
+                  console.error(err);
+                  alert(err.message);
+                }
+        }
+
+    return(
         
     <>
         <Header title="Login"/>
         <div className="card col-12 col-lg-4 login-card mt-2 hv-center">
-            <form>
+            <form onSubmit={handleSubmit}>
                 <div className="form-group text-left">
                 <label htmlFor="exampleInputEmail1">Email address</label>
                 <input type="email" 
@@ -14,6 +34,7 @@ export default function LoginPage() {
                        id="email" 
                        aria-describedby="emailHelp" 
                        placeholder="Enter email"
+                       onChange={e=>{setEmail(e.target.value)}}
                 />
                 <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
                 </div>
@@ -23,6 +44,7 @@ export default function LoginPage() {
                         className="form-control" 
                         id="password" 
                         placeholder="Password"
+                        onChange={e=>{setPassword(e.target.value)}}
                     />
                 </div>
                 <button 
