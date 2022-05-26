@@ -1,7 +1,14 @@
-import { LandingPage, RegisterPage, LoginPage, GameRPSPage } from './Pages';
+import {
+  LandingPage,
+  RegisterPage,
+  LoginPage,
+  GameForm,
+  GameList,
+  GameRPSPage
+} from "./pages/index";
 // import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
@@ -11,6 +18,8 @@ function App() {
         <Route path='/register' element={<RegisterPage />} />
         <Route path='/login' element={<LoginPage />} />
         <Route path='/gamerps' element={<GameRPSPage />} />
+        <Route exact path="/games" element={<GameList />} />
+        <Route exact path="/games/add" element={<GameForm />} />
       </Routes>
     </>
   );
