@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Gamers-Heaven/static/css/main.f9476d19.css",
-    "main.js": "/Gamers-Heaven/static/js/main.105d0b49.js",
+    "main.js": "/Gamers-Heaven/static/js/main.a39e4330.js",
     "static/js/787.6b9226e3.chunk.js": "/Gamers-Heaven/static/js/787.6b9226e3.chunk.js",
     "static/media/main-bg.jpg": "/Gamers-Heaven/static/media/main-bg.30d68a6cbd8a1a6d0d82.jpg",
     "static/media/batu.png": "/Gamers-Heaven/static/media/batu.422fc861d35352dd3c97.png",
@@ -12,11 +12,11 @@
     "static/media/refresh.png": "/Gamers-Heaven/static/media/refresh.0554cc31ca7b6fb2cad2.png",
     "index.html": "/Gamers-Heaven/index.html",
     "main.f9476d19.css.map": "/Gamers-Heaven/static/css/main.f9476d19.css.map",
-    "main.105d0b49.js.map": "/Gamers-Heaven/static/js/main.105d0b49.js.map",
+    "main.a39e4330.js.map": "/Gamers-Heaven/static/js/main.a39e4330.js.map",
     "787.6b9226e3.chunk.js.map": "/Gamers-Heaven/static/js/787.6b9226e3.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f9476d19.css",
-    "static/js/main.105d0b49.js"
+    "static/js/main.a39e4330.js"
   ]
 }
