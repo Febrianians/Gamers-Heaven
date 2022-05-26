@@ -3,15 +3,7 @@ import Header from "../../components/Header/Header";
 import { auth, db } from "../../services/firebase";
 import { ref, set } from "firebase/database";
 
-import {
-  GoogleAuthProvider,
-  getAuth,
-  signInWithPopup,
-  signInWithEmailAndPassword,
-  createUserWithEmailAndPassword,
-  sendPasswordResetEmail,
-  signOut,
-} from "firebase/auth";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 
 export default function RegisterPage() {
   const [email, setEmail] = useState("");

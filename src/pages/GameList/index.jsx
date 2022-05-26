@@ -41,6 +41,13 @@ const GameList = () => {
 
   return (
     <Container>
+      <Link
+        className="btn btn-primary btn-lg mb-2"
+        role="button"
+        to="/games/add"
+      >
+        Tambah
+      </Link>
       <Row>
         {gameList &&
           gameList.map((game) => {
