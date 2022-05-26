@@ -7,10 +7,16 @@ import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
 import { auth, db } from "../../services/firebase";
 import { ref, onValue, get, child } from "firebase/database";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { useNavigate } from "react-router-dom";
 
 export default function LandingPage() {
   const [userData, setUserData] = useState([]);
   const [user, loading, error] = useAuthState(auth);
+  const history = useNavigate();
+
+  function toGame() {
+    history("/gamerps");
+  }
 
   function fetchUserData() {
     // const dbRef = ref(getDatabase());
@@ -46,7 +52,7 @@ export default function LandingPage() {
               Experience New Traditional Game Play
             </h3>
             <div>
-              <Button color="warning" size="lg">
+              <Button color="warning" size="lg" onClick={toGame}>
                 PLAY NOW
               </Button>
             </div>
