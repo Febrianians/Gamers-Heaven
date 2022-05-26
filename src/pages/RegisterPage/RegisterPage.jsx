@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Header from "../../Component/Header/Header";
+import { Header } from "../../components";
 import { auth, db } from "../../services/firebase";
 import { ref, set } from "firebase/database";
 
