@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 // import { Link, useNavigate } from "react-router-dom";
-import Header from '../../Component/Header/Header';
+import Header from '../../components/Header/Header';
 import { auth, db } from '../../services/firebase'
 import { signInWithEmailAndPassword } from 'firebase/auth';
 

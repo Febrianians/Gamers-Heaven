@@ -1,8 +1,36 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Navbar, NavbarBrand, NavbarToggler, Collapse, Nav, NavItem, NavLink } from 'reactstrap';
 import styles from './navbarHomeComponentStyle.module.css';
 
+import { auth, db } from '../../services/firebase'
+import { ref, onValue, get, child } from 'firebase/database'
+import { useAuthState } from 'react-firebase-hooks/auth'
+import { useNavigate } from 'react-router-dom';
+
 export default function NavbarHomeComponent() {
+  const [userData, setUserData] = useState({})
+  const [ user, loading] = useAuthState(auth);
+  const navigate = useNavigate();
+
+  function fetchUserdata() {
+    get(child(ref(db), `users/${user.uid}`))
+    .then((snapshot) => {
+      if(snapshot.exists()) {
+        console.log(snapshot.val());
+        setUserData(snapshot.val())
+      } else {
+        console.log("No data available");
+      }
+    })
+    .catch((error) => {
+      console.error(error);
+    })
+  }
+
+  useEffect(() => {
+    if (loading) return;
+    fetchUserdata();
+  }, []);
 
   return(
     <div>
@@ -43,7 +71,7 @@ export default function NavbarHomeComponent() {
       <Nav>
         <NavItem className={styles.navitem}>
           <NavLink className={styles.navlink} href='/home'>
-            UserHasLogin@gmail.com
+            {user.email}
           </NavLink>
         </NavItem>
         <NavItem className={styles.navitem}>
