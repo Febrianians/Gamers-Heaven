@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
+import {
+  HomePage,
+  LandingPage,
+  RegisterPage,
+  LoginPage,
+  ProfilePage,
+  GameForm,
+  GameList,
+  GameRPSPage,
+} from "./pages/index";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Routes>
+        <Route exact path="/" element={<LandingPage />} />
+        <Route exact path="/home" element={<HomePage />} />
+        <Route exact path="/register" element={<RegisterPage />} />
+        <Route exact path="/login" element={<LoginPage />} />
+        <Route exact path="/user" element={<ProfilePage />} />
+        <Route exact path="/gamerps" element={<GameRPSPage />} />
+        <Route exact path="/games" element={<GameList />} />
+        <Route exact path="/games/add" element={<GameForm />} />
+      </Routes>
+    </>
   );
 }
 
