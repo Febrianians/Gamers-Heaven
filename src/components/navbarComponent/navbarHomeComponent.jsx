@@ -1,6 +1,6 @@
 import React from 'react';
 import { Navbar, NavbarBrand, NavbarToggler, Collapse, Nav, NavItem, NavLink } from 'reactstrap';
-import styles from './navbarComponentStyle.module.css';
+import styles from './navbarHomeComponentStyle.module.css';
 
 export default function NavbarHomeComponent() {
 
@@ -42,12 +42,12 @@ export default function NavbarHomeComponent() {
       
       <Nav>
         <NavItem className={styles.navitem}>
-          <NavLink className={styles.navlink} href='/'>
+          <NavLink className={styles.navlink} href='/home'>
             UserHasLogin@gmail.com
           </NavLink>
         </NavItem>
         <NavItem className={styles.navitem}>
-          <NavLink className={styles.navlink} href="/logout">
+          <NavLink className={styles.navlink} href="/">
             LOG OUT
           </NavLink>
         </NavItem>

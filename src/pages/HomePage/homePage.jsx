@@ -1,11 +1,11 @@
 import React from "react";
-import { NavbarComponent } from "../../components";
+import { NavbarHomeComponent } from "../../components";
 import styles from "./homePageStyle.module.css";
 
 export default function HomePage () {
     return (
         <>
-            <NavbarComponent />
+            <NavbarHomeComponent />
             
             <div className={styles.homePage}>
                 <div className={styles.bodySection}>
