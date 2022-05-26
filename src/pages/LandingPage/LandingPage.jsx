@@ -1,17 +1,16 @@
-import React, {useState, useEffect} from 'react';
-import { NavbarComponent } from '../../components';
-import styles from './LandingPageStyle.module.css'
-import { Button } from 'reactstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCaretDown } from '@fortawesome/free-solid-svg-icons'
-import { auth, db } from '../../services/firebase'
-import { ref, onValue, get, child} from 'firebase/database'
-import { useAuthState } from 'react-firebase-hooks/auth'
+import React, { useState, useEffect } from "react";
+import { NavbarComponent } from "../../components";
+import styles from "./LandingPageStyle.module.css";
+import { Button } from "reactstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
+import { auth, db } from "../../services/firebase";
+import { ref, onValue, get, child } from "firebase/database";
+import { useAuthState } from "react-firebase-hooks/auth";
 
 export default function LandingPage() {
-
-  const [userData, setUserData] = useState([])
-  const [user, loading, error] = useAuthState(auth)
+  const [userData, setUserData] = useState([]);
+  const [user, loading, error] = useAuthState(auth);
 
   function fetchUserData() {
     // const dbRef = ref(getDatabase());
@@ -28,14 +27,14 @@ export default function LandingPage() {
         console.error(error);
       });
   }
-  
+
   useEffect(() => {
     if (loading) return;
     // if (!user) return navigate("/");
     fetchUserData();
   }, []);
-  
-  return(
+
+  return (
     <>
       <div className={styles.landingpage}>
         <NavbarComponent />
@@ -43,12 +42,11 @@ export default function LandingPage() {
           <div className={styles.content}>
             <h1 className={styles.contenth1}>PLAY TRADITIONAL GAME</h1>
             <h3>{userData?.email}</h3>
-            <h3 className={styles.contenth3}>Experience New Traditional Game Play</h3>
+            <h3 className={styles.contenth3}>
+              Experience New Traditional Game Play
+            </h3>
             <div>
-              <Button
-                color="warning"
-                size="lg"
-              >
+              <Button onClick={toGame} color="warning" size="lg">
                 PLAY NOW
               </Button>
             </div>
@@ -62,5 +60,5 @@ export default function LandingPage() {
         </div>
       </div>
     </>
-  )
+  );
 }
