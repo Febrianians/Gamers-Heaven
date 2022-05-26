@@ -3,7 +3,7 @@ import { Navbar, NavbarBrand, NavbarToggler, Collapse, Nav, NavItem, NavLink } f
 import styles from './navbarHomeComponentStyle.module.css';
 
 import { auth, db } from '../../services/firebase'
-import { ref, onValue, get, child } from 'firebase/database'
+import { ref, get, child } from 'firebase/database'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { useNavigate } from 'react-router-dom';
 
@@ -51,12 +51,12 @@ export default function NavbarHomeComponent() {
         navbar
       >
       <NavItem className={styles.navitem}>
-        <NavLink className={styles.navlink} href="/">
+        <NavLink className={styles.navlink} href="/home">
             HOME
           </NavLink>
         </NavItem>
         <NavItem className={styles.navitem}>
-          <NavLink className={styles.navlink} href="profile">
+          <NavLink className={styles.navlink} href="/user">
             PROFILE
           </NavLink>
         </NavItem>
@@ -71,7 +71,7 @@ export default function NavbarHomeComponent() {
       <Nav>
         <NavItem className={styles.navitem}>
           <NavLink className={styles.navlink} href='/home'>
-            {user.email}
+            {user?.email}
           </NavLink>
         </NavItem>
         <NavItem className={styles.navitem}>
