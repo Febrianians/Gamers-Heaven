@@ -1,3 +1,7 @@
-body {
-  background-color: blue !important;
+.navbar {
+  opacity: 0.8;
+}
+
+.choiceImg {
+  height: 9vh;
 }
