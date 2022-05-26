@@ -1,4 +1,4 @@
-import { LandingPage, RegisterPage, LoginPage } from './Pages/index';
+import { LandingPage, RegisterPage, LoginPage, ProfilePage } from './Pages/index';
 // import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Routes, Route } from 'react-router-dom';
@@ -10,6 +10,7 @@ function App() {
         <Route exact path='/' element={<LandingPage />} />
         <Route path='/register' element={<RegisterPage />} />
         <Route path='/login' element={<LoginPage />} />
+        <Route path='/user' element={<ProfilePage/>}/>
       </Routes>
     </>
   );

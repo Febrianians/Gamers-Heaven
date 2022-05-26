@@ -1,0 +1,13 @@
+*,
+html,
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.mainbg {
+    background-image: url(/public/features.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}

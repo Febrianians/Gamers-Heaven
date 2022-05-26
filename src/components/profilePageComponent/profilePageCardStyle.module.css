@@ -1,0 +1,21 @@
+.form{
+    color: #fff;
+}
+
+@media only screen and (min-width: 768px){
+    .form{
+    margin-top: 100px;
+    padding: 50px 50px;
+}
+
+}
+
+@media only screen and (max-width: 767px) {
+  .form {
+    margin-top: 10px;
+    padding: 10px;
+  }
+  .formGroup{
+      margin-bottom: 50px !important;
+  }
+}
