@@ -1,10 +1,15 @@
-import React from "react";
-import { Button } from 'reactstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCaretDown } from '@fortawesome/free-solid-svg-icons'
-import { NavbarHomeComponent, ProfileCardComponent, ProfilePageComponent } from '../../components/index'
+// import React, {useState, useEffect} from "react";
+import { NavbarHomeComponent, ProfileCardComponent } from '../../components/index'
+// import { auth, db } from '../../services/firebase'
+// import { ref, onValue, get, child } from 'firebase/database'
+// import { useAuthState } from 'react-firebase-hooks/auth'
+
 import styles from './ProfilePageStyle.module.css'
-export default function ProfilePage (){
+
+export default function ProfilePage() {
+    
+   
+
     return (
         <>
             <div className={styles.landingpage}>
