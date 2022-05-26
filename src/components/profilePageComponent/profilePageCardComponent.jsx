@@ -1,92 +1,94 @@
-import React from "react";
-import { Row, Col, FormGroup, Label, Input, Form } from 'reactstrap'
+import React, {useState, useEffect} from "react";
+import { Table } from 'reactstrap'
 import styles from './profilePageCardStyle.module.css'
+import { auth, db } from '../../services/firebase'
+import { ref, onValue, get, child } from 'firebase/database'
+import { useAuthState } from 'react-firebase-hooks/auth'
+
 export default function ProfileCardComponent() {
+
+    const [userData, setUserData] = useState([])
+    const [user, loading, error] = useAuthState(auth)
+
+    function fetchUserData() {
+        // const dbRef = ref(getDatabase());
+        get(child(ref(db), `users/${user.uid}`))
+        .then((snapshot) => {
+            if (snapshot.exists()) {
+            console.log(snapshot.val());
+            setUserData(snapshot.val());
+            } else {
+            console.log("No data available");
+            }
+        })
+        .catch((error) => {
+            console.error(error);
+        });
+    }
+
+    useEffect(() => {
+        if (loading) return;
+        // if (!user) return navigate("/");
+        fetchUserData();
+    }, []);
+
     return (
         <>
-            <Form className={styles.form}>
-                <Row>
-                    <Col md={4} sm={6}>
-                    <FormGroup className={styles.FormGroup}>
-                        <Label for="Email">
+            <Table
+                responsive 
+                className={styles.table}
+                >
+                <thead>
+                    <tr>
+                    <th>
                         Email
-                        </Label>
-                        <Input
-                        name="email"
-                        placeholder="user@gmail.com"
-                        type="email"
-                        />
-                    </FormGroup>
-                    </Col>
-                    <Col md={4} sm={6}>
-                    <FormGroup>
-                        <Label for="Username">
+                    </th>
+                    <th>
                         Username
-                        </Label>
-                        <Input
-                        name="username"
-                        placeholder="username"
-                        type="text"
-                        />
-                    </FormGroup>
-                    </Col>
-                    <Col md={4}>
-                    <FormGroup>
-                        <Label for="Password">
+                    </th>
+                    <th>
                         Password
-                        </Label>
-                        <Input
-                        name="password"
-                        placeholder="password user"
-                        type="password"
-                        />
-                    </FormGroup>
-                    </Col>
-                </Row>
-                <FormGroup>
-                    <Label for="Bio">
-                    Bio
-                    </Label>
-                    <Input
-                    name="bio"
-                    placeholder="Bio"
-                    />
-                </FormGroup>
-                <FormGroup>
-                    <Label for="exampleAddress2">
-                    City
-                    </Label>
-                    <Input
-                    name="city"
-                    placeholder="Apartment, studio, or floor"
-                    />
-                </FormGroup>
-                <Row>
-                    <Col md={6}>
-                    <FormGroup>
-                        <Label for="Total Score">
+                    </th>
+                    <th>
                         Total Score
-                        </Label>
-                        <Input
-                        name="totalscore"
-                        placeholder="999"
-                        />
-                        
-                    </FormGroup>
-                    </Col>
-                    <Col md={6}>
-                    <FormGroup>
-                        <Label for="Social Media URL">
-                        Social Media Url
-                        </Label>
-                        <Input
-                        name="socialmediaurl"
-                        placeholder="@user"        
-                        />
-                    </FormGroup>
-                    </Col>
-                </Row>
-                </Form>
+                    </th>
+                    <th>
+                        Bio    
+                    </th>
+                    <th>
+                        City    
+                    </th>
+                    <th>
+                        Social Media Url    
+                    </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <th scope="row">
+                        {userData.email}
+                    </th>
+                    <td>
+                        {userData.username}
+                    </td>
+                    <td>
+                        {userData.password}
+                    </td>
+                    <td>
+                        {userData.totalScore}
+                    </td>
+                    <td>
+                        {userData.bio}
+                    </td>
+                    <td>
+                        {userData.city}
+                    </td>
+                    <td>
+                        {userData.socialMediaUrl}
+                    </td>
+                    </tr>
+                </tbody>
+                </Table>
         </>
     )
 }

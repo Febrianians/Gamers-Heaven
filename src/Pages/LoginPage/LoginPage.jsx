@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
-// import { Link, useNavigate } from "react-router-dom";
+import {Link, useNavigate } from "react-router-dom";
 import Header from '../../Component/Header/Header';
 import { auth, db } from '../../services/firebase'
 import { signInWithEmailAndPassword } from 'firebase/auth';
 
-export default function LoginPage() {
+export default function LoginPage(props) {
+    let navigate = useNavigate()
+    const {handleProps} = props
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const handleSubmit = async (e) => {
@@ -13,7 +15,15 @@ export default function LoginPage() {
             console.log(email,password)     
             const response = await signInWithEmailAndPassword(auth, email, password);
                 console.log(response);
-                    if(response) alert('Login Success')
+            if (response) {
+                alert('Login Success');
+                // <Link to={{
+                //     pathname: "/",
+                //     state: response // your data array of objects
+                // }}
+                // />
+                navigate('/user') 
+            }
                 
                 } catch (err) {
                   console.error(err);
