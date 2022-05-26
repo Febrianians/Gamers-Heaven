@@ -3,11 +3,13 @@ import { auth, db, storage } from "../../services/firebase";
 import { ref, set } from "firebase/database";
 import { v4 as uuidv4 } from "uuid";
 import { Container, Form, FormGroup, Label, Input, Button } from "reactstrap";
+import { useNavigate } from "react-router-dom";
 
 const GameForm = () => {
   const name = useInput("");
   const description = useInput("");
   const game_url = useInput("");
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -21,6 +23,8 @@ const GameForm = () => {
         game_url: game_url.value,
         play_count: 0,
       });
+      navigate("/games");
+
       // console.log(response);
     } catch (error) {
       console.error(error);

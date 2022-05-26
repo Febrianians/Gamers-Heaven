@@ -46,7 +46,7 @@ export default function LandingPage() {
               Experience New Traditional Game Play
             </h3>
             <div>
-              <Button onClick={toGame} color="warning" size="lg">
+              <Button color="warning" size="lg">
                 PLAY NOW
               </Button>
             </div>
