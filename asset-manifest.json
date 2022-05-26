@@ -1,22 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.a5073191.css",
-    "main.js": "/static/js/main.929e1d22.js",
-    "static/js/787.6b9226e3.chunk.js": "/static/js/787.6b9226e3.chunk.js",
-    "static/media/main-bg.jpg": "/static/media/main-bg.30d68a6cbd8a1a6d0d82.jpg",
-    "static/media/batu.png": "/static/media/batu.422fc861d35352dd3c97.png",
-    "static/media/kertas.png": "/static/media/kertas.c3b7466eef950c807132.png",
-    "static/media/features.jpg": "/static/media/features.9b1304a2be81f44f1076.jpg",
-    "static/media/gunting.png": "/static/media/gunting.bce44bbaa649cebf99e8.png",
-    "static/media/main-bg-figma.jpg": "/static/media/main-bg-figma.c5acd6f8404bc2f01441.jpg",
-    "static/media/refresh.png": "/static/media/refresh.0554cc31ca7b6fb2cad2.png",
-    "index.html": "/index.html",
-    "main.a5073191.css.map": "/static/css/main.a5073191.css.map",
-    "main.929e1d22.js.map": "/static/js/main.929e1d22.js.map",
-    "787.6b9226e3.chunk.js.map": "/static/js/787.6b9226e3.chunk.js.map"
+    "main.css": "/Gamers-Heaven/static/css/main.073c9b0a.css",
+    "main.js": "/Gamers-Heaven/static/js/main.e5f2744e.js",
+    "static/js/787.dfc11a1a.chunk.js": "/Gamers-Heaven/static/js/787.dfc11a1a.chunk.js",
+    "static/media/logo.svg": "/Gamers-Heaven/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/Gamers-Heaven/index.html",
+    "main.073c9b0a.css.map": "/Gamers-Heaven/static/css/main.073c9b0a.css.map",
+    "main.e5f2744e.js.map": "/Gamers-Heaven/static/js/main.e5f2744e.js.map",
+    "787.dfc11a1a.chunk.js.map": "/Gamers-Heaven/static/js/787.dfc11a1a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a5073191.css",
-    "static/js/main.929e1d22.js"
+    "static/css/main.073c9b0a.css",
+    "static/js/main.e5f2744e.js"
   ]
 }
