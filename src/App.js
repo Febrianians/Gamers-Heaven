@@ -1,4 +1,4 @@
-import { LandingPage, RegisterPage, LoginPage, GameRPSPage } from './pages';
+import { LandingPage, RegisterPage, LoginPage, GameRPSPage } from './Pages';
 // import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Routes, Route } from 'react-router-dom';
